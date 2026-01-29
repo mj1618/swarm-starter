@@ -35,3 +35,12 @@ Leave this as-is if you choose to use the default tech-stack, write your own or 
 Run `swarm up -d` and it will use `swarm/swarm.yaml` to kick off the desired ralph loops.
 By default there is a planner loop (uses `swarm/prompts/planner.md` for each loop) and a coder loop (uses `swarm/prompts/coder.md` for each loop).
 
+Keep an eye on the loops using the following commands:
+```bash
+swarm ls
+swarm inspect planner
+swarm tail -f planner
+swarm down
+```
+
+A complete list of commands is found at [swarm-cli](https://github.com/mj1618/swarm-cli)
