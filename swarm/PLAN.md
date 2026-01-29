@@ -1,4 +1,4 @@
-We're making a comprehensive todo-list app called TaskFlow. Your goal is to write tasks to implement the whole application and write the tasks to "todo/*.pending.md" and then exit immediately.
+We're making a comprehensive todo-list app called TaskFlow.
 
 The tech stack is NextJS, TypeScript, Tailwind and Convex.dev for the backend.
 
