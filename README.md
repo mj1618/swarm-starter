@@ -16,6 +16,7 @@ This shows you how to setup your own zero-shot project using swarm-cli.
 2. Install [swarm-cli](https://github.com/mj1618/swarm-cli)
 3. Create your own [convex.dev](https://www.convex.dev/login) account (if you use the tech-stack defaults)
 4. Set the swarm-cli to your particular agent (default is claude code). E.g. `swarm config set-backend cursor -g`
+5. Remove `.git` and initialise your own git repository with a github remote setup
 
 ## Instructions
 
