@@ -50,6 +50,7 @@ go install github.com/mj1618/swarm-cli@latest
 ### 3. Create a Convex account
 
 Create your own [convex.dev](https://www.convex.dev/login) account (if you use the tech-stack defaults).
+Install the CLI and login to the CLI to connect your account.
 
 ### 4. Configure your agent backend
 
