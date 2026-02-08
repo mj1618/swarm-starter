@@ -12,11 +12,55 @@ This shows you how to setup your own zero-shot project using swarm-cli.
 
 ## Prereqs
 
-1. Install either [Cursor Agent CLI](https://cursor.com/docs/cli/overview) or [Claude Code CLI](https://code.claude.com/docs/en/setup) (and buy some tokens)
-2. Install [swarm-cli](https://github.com/mj1618/swarm-cli)
-3. Create your own [convex.dev](https://www.convex.dev/login) account (if you use the tech-stack defaults)
-4. Set the swarm-cli to your particular agent (default is claude code). E.g. `swarm config set-backend cursor -g`
-5. Remove `.git` and initialise your own git repository with a github remote setup
+### 1. Install an agent CLI
+
+Install either [Cursor Agent CLI](https://cursor.com/docs/cli/overview) or [Claude Code CLI](https://code.claude.com/docs/en/setup) (and buy some tokens).
+
+### 2. Install [swarm-cli](https://github.com/mj1618/swarm-cli)
+
+**macOS (Apple Silicon):**
+```bash
+curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_darwin_arm64.tar.gz | tar xz
+sudo mv swarm /usr/local/bin/
+```
+
+**macOS (Intel):**
+```bash
+curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_darwin_amd64.tar.gz | tar xz
+sudo mv swarm /usr/local/bin/
+```
+
+**Linux (x64):**
+```bash
+curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_linux_amd64.tar.gz | tar xz
+sudo mv swarm /usr/local/bin/
+```
+
+**Linux (ARM64):**
+```bash
+curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_linux_arm64.tar.gz | tar xz
+sudo mv swarm /usr/local/bin/
+```
+
+**Or install with Go:**
+```bash
+go install github.com/mj1618/swarm-cli@latest
+```
+
+### 3. Create a Convex account
+
+Create your own [convex.dev](https://www.convex.dev/login) account (if you use the tech-stack defaults).
+
+### 4. Configure your agent backend
+
+Set the swarm-cli to your particular agent (default is claude code):
+```bash
+swarm config set-backend cursor -g
+```
+
+### 5. Set up your own repo
+
+Remove `.git` and initialise your own git repository with a github remote setup.
 
 ## Instructions
 
