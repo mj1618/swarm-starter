@@ -63,6 +63,24 @@ curl -L https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_l
 sudo mv /tmp/swarm /usr/local/bin/
 ```
 
+**Windows (x64):**
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_windows_amd64.zip -OutFile swarm-cli.zip
+Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
+# Add to PATH (run once):
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;$env:LOCALAPPDATA\swarm-cli", "User")
+```
+
+**Windows (ARM64):**
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_windows_arm64.zip -OutFile swarm-cli.zip
+Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
+# Add to PATH (run once):
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;$env:LOCALAPPDATA\swarm-cli", "User")
+```
+
 </details>
 
 <details>
