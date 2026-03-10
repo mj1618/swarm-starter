@@ -5,7 +5,7 @@ A CLI tool for orchestrating multiple AI coding agents to work on a project plan
 ## Index
 
 1. [Clone this repo](#1-clone-this-repo)
-2. [Edit PLAN.md](#2-edit-planmd)
+2. [Edit PLAN.md and CLAUDE.md](#2-edit-planmd-and-claudemd)
 3. [Install the Swarm CLI](#3-install-the-swarm-cli)
 4. [Run](#4-run)
 
@@ -18,9 +18,11 @@ git clone <your-repo-url>
 cd <your-repo>
 ```
 
-### 2. Edit PLAN.md
+### 2. Edit PLAN.md and CLAUDE.md
 
 Define your project plan in `swarm/PLAN.md`. This is the blueprint that the swarm of agents will execute against.
+
+Update `CLAUDE.md` with any project-specific instructions, conventions, or context that the agents should follow.
 
 ### 3. Install the Swarm CLI
 
