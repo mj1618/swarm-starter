@@ -1,92 +1,95 @@
-# Swarm Demo
+# Swarm
 
-This shows you how to setup your own zero-shot project using swarm-cli.
+A CLI tool for orchestrating multiple AI coding agents to work on a project plan in parallel.
 
 ## Index
 
-- [Prereqs](#prereqs)
-- [Instructions](#instructions)
-  - [Create the plan](#create-the-plan)
-  - [Optionally update AGENTS.md](#optionally-update-agentsmd)
-  - [Kick off the planner and coder](#kick-off-the-planner-and-coder)
+1. [Clone this repo](#1-clone-this-repo)
+2. [Edit PLAN.md](#2-edit-planmd)
+3. [Install the Swarm CLI](#3-install-the-swarm-cli)
+4. [Run](#4-run)
 
-## Prereqs
+## Getting Started
 
-### 1. Install an agent CLI
+### 1. Clone this repo
 
-Install either [Cursor Agent CLI](https://cursor.com/docs/cli/overview) or [Claude Code CLI](https://code.claude.com/docs/en/setup) (and buy some tokens).
+```bash
+git clone <your-repo-url>
+cd <your-repo>
+```
 
-### 2. Install [swarm-cli](https://github.com/mj1618/swarm-cli)
+### 2. Edit PLAN.md
+
+Define your project plan in `swarm/PLAN.md`. This is the blueprint that the swarm of agents will execute against.
+
+### 3. Install the Swarm CLI
+
+You need one of the supported agent backends installed:
+
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI (preferred)
+- [Cursor](https://cursor.sh) with the `agent` CLI
+- [Codex CLI](https://github.com/openai/codex) (OpenAI's coding agent)
+
+<details>
+<summary><strong>Download Binary (Recommended)</strong></summary>
+
+Download the latest binary for your platform from the [releases page](https://github.com/mj1618/swarm-cli/releases/latest).
 
 **macOS (Apple Silicon):**
+
 ```bash
-curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_darwin_arm64.tar.gz | tar xz
-sudo mv swarm /usr/local/bin/
+curl -L https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_darwin_arm64.tar.gz | tar xz -C /tmp
+sudo mv /tmp/swarm /usr/local/bin/
 ```
 
 **macOS (Intel):**
+
 ```bash
-curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_darwin_amd64.tar.gz | tar xz
-sudo mv swarm /usr/local/bin/
+curl -L https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_darwin_amd64.tar.gz | tar xz -C /tmp
+sudo mv /tmp/swarm /usr/local/bin/
 ```
 
 **Linux (x64):**
+
 ```bash
-curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_linux_amd64.tar.gz | tar xz
-sudo mv swarm /usr/local/bin/
+curl -L https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_linux_amd64.tar.gz | tar xz -C /tmp
+sudo mv /tmp/swarm /usr/local/bin/
 ```
 
 **Linux (ARM64):**
+
 ```bash
-curl -L https://github.com/mj1618/swarm-cli/releases/download/latest/swarm-cli_linux_arm64.tar.gz | tar xz
-sudo mv swarm /usr/local/bin/
+curl -L https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_linux_arm64.tar.gz | tar xz -C /tmp
+sudo mv /tmp/swarm /usr/local/bin/
 ```
 
-**Or install with Go:**
+</details>
+
+<details>
+<summary><strong>Install with Go</strong></summary>
+
 ```bash
 go install github.com/mj1618/swarm-cli@latest
 ```
 
-### 3. Create a Convex account
+</details>
 
-Create your own [convex.dev](https://www.convex.dev/login) account (if you use the tech-stack defaults).
-Install the CLI and login to the CLI to connect your account.
+<details>
+<summary><strong>Build from Source</strong></summary>
 
-### 4. Configure your agent backend
-
-Set the swarm-cli to your particular agent (default is claude code):
 ```bash
-swarm config set-backend cursor -g
+git clone https://github.com/mj1618/swarm-cli.git
+cd swarm-cli
+go build -o swarm .
+sudo mv swarm /usr/local/bin/
 ```
 
-### 5. Set up your own repo
+</details>
 
-Remove `.git` and initialise your own git repository with a github remote setup.
+### 4. Run
 
-## Instructions
-
-### Create the plan
-
-First start by editing `swarm/PLAN.md` with your own project plan. 
-Optionally change the tech stack to your desired stack here also.
-
-### Optionally update AGENTS.md
-
-AGENTS.md provides instructions to every agent that runs in your project.
-This can include some code guidelines, or how to use common tools.
-Leave this as-is if you choose to use the default tech-stack, write your own or you can leave this completely blank if you like.
-
-### Kick off the planner and coder
-
-Run `swarm up -d` and it will use `swarm/swarm.yaml` to kick off the desired ralph loops.
-By default there is a planner loop (uses `swarm/prompts/planner.md` for each loop) and a coder loop (uses `swarm/prompts/coder.md` for each loop).
-
-Keep an eye on the loops using the following commands:
 ```bash
-swarm ls
-swarm inspect planner
-swarm tail -f planner
-swarm down
+swarm up -d     # kick things off
+swarm top       # monitor progress
+swarm down      # stop the current pipeline
 ```
-
-A complete list of commands is found at [swarm-cli](https://github.com/mj1618/swarm-cli)
