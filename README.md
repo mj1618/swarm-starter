@@ -70,6 +70,7 @@ sudo mv /tmp/swarm /usr/local/bin/
 ```powershell
 Invoke-WebRequest -Uri https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_windows_amd64.zip -OutFile swarm-cli.zip
 Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
+Rename-Item "$env:LOCALAPPDATA\swarm-cli\swarm-cli.exe" "swarm.exe"
 # Add to PATH (run once):
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;$env:LOCALAPPDATA\swarm-cli", "User")
 ```
@@ -79,6 +80,7 @@ Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
 ```powershell
 Invoke-WebRequest -Uri https://github.com/mj1618/swarm-cli/releases/latest/download/swarm-cli_windows_arm64.zip -OutFile swarm-cli.zip
 Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
+Rename-Item "$env:LOCALAPPDATA\swarm-cli\swarm-cli.exe" "swarm.exe"
 # Add to PATH (run once):
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;$env:LOCALAPPDATA\swarm-cli", "User")
 ```
