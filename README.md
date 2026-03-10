@@ -31,7 +31,7 @@ You need one of the supported agent backends installed:
 - [Codex CLI](https://github.com/openai/codex) (OpenAI's coding agent)
 
 <details>
-<summary><strong>Download Binary (Recommended)</strong></summary>
+<summary><strong>Option A: Download Binary (Recommended)</strong></summary>
 
 Download the latest binary for your platform from the [releases page](https://github.com/mj1618/swarm-cli/releases/latest).
 
@@ -84,7 +84,7 @@ Expand-Archive swarm-cli.zip -DestinationPath "$env:LOCALAPPDATA\swarm-cli"
 </details>
 
 <details>
-<summary><strong>Install with Go</strong></summary>
+<summary><strong>Option B: Install with Go</strong></summary>
 
 ```bash
 go install github.com/mj1618/swarm-cli@latest
@@ -93,7 +93,7 @@ go install github.com/mj1618/swarm-cli@latest
 </details>
 
 <details>
-<summary><strong>Build from Source</strong></summary>
+<summary><strong>Option C: Build from Source</strong></summary>
 
 ```bash
 git clone https://github.com/mj1618/swarm-cli.git
