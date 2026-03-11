@@ -27,7 +27,7 @@ Update `CLAUDE.md` with any project-specific instructions, conventions, or conte
 ### 3. Install the Swarm CLI
 
 Note that you will need one of the Claude, Cursor or Codex CLI's installed before proceeding.
-Install the swarm CLI to have swarm available on the command line:
+Then install the swarm CLI to have swarm available on the command line:
 
 <details>
 <summary><strong>Option A: Download Binary (Recommended)</strong></summary>
