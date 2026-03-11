@@ -26,11 +26,8 @@ Update `CLAUDE.md` with any project-specific instructions, conventions, or conte
 
 ### 3. Install the Swarm CLI
 
-You need one of the supported agent backends installed:
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI (preferred)
-- [Cursor](https://cursor.sh) with the `agent` CLI
-- [Codex CLI](https://github.com/openai/codex) (OpenAI's coding agent)
+Note that you will need one of the Claude, Cursor or Codex CLI's installed before proceeding.
+Install the swarm CLI to have swarm available on the command line:
 
 <details>
 <summary><strong>Option A: Download Binary (Recommended)</strong></summary>
