@@ -38,7 +38,35 @@ tasks:
       When you have done that exit immediately!
     depends_on: [planner]
 
+  reviewer:
+    prompt-string: |
+      # Find a task to review
+
+      Look under the ./swarm/tasks/ folder for a file suffixed with ".completed.md" - and claim it by renaming it to ".reviewing.md".
+      If no completed tasks are found - exit immediately.
+
+      # Review the task
+
+      Read the task file to understand what was supposed to be done.
+      Then review the code changes related to this task. Look for:
+      - Bugs or logic errors
+      - Missing edge cases
+      - Code quality issues
+      - Anything that doesn't match the task requirements
+
+      # Fix any issues
+
+      If you find issues, fix them directly in the code.
+      Add tests if needed and run existing tests to make sure nothing is broken.
+
+      # Complete the review
+
+      Add a note to the task file summarizing what you reviewed and any fixes you made.
+      Rename the file from ".reviewing.md" to ".reviewed.md".
+      Then `git add .`, `git commit -m "a suitable message"` and `git push` your changes to the remote repository.
+    depends_on: [coder]
+
 pipelines:
   development:
     iterations: 10
-    tasks: [planner, coder]
+    tasks: [planner, coder, reviewer]
