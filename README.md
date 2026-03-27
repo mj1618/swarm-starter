@@ -3,7 +3,7 @@
 A CLI tool for orchestrating multiple AI coding agents to work on a project plan in parallel.
 
 Prefer not to use the cli tool, and instead bootstrap it yourself?
-See [https://github.com/mj1618/swarm-bootstap](https://github.com/mj1618/swarm-bootstap)
+See [https://github.com/mj1618/swarm-bootstrap](https://github.com/mj1618/swarm-bootstrap)
 
 ## Index
 
